@@ -2,49 +2,37 @@
     <img alt="Curso de Next.js" src="https://static.platzi.com/media/achievements/badge-nextjs-2259fc68-f86b-486e-bc09-95311a887985.png" width="60" />
  </p>
  <h1 align="center">
-    Start NextJS + TypeScript
+    Start NextJS + TypeScript Manual setup
  </h1>
  <p align="center">
     This guide is created by Fernando Jose Aguilar Rivas
  </p>
  
- This is a technical guide to create nextjs project without nextjs CLI. All the procedure is manual using this form we have more adventages like:
+Technical guide about setup manual nextJS using typescript preset. This guide include depencies, files configuration and enviroment variables, basic backend server and testing enviroment.
 
--  Performance
--  Less dependecies
--  Scalability
+## Installation
 
-## Installation guide
+**Step one**: Start node JS project using command:
 
-*  **Step 1**
-Create project folder and excute on terminal.
-	> npm init
+`npm init`
 
-* **Step 2**
-Install dependencies.
+**Step two**: Install NextJS dependencies and Dev dependencies:
 
-	> npm install react react-dom next
+`npm install next react react-dom`
 
-* **Step 3**
-Create **page** directory and index.jsx file.
-	> mkdir page
+`npm install typescript @types/react @types/node -D`
 
-* **Step 4**
-Add the scripts in **package.json**
+**Step three**: Add `package.json` script settings:
+
 ```json
 "scripts": {
-    "dev": "next", //Start dev server
-    "build": "next build", // Compile project
-    "start": "next start" //Start production server
-  }
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
 ```
-#### If you need work [NextJS using Typescript](https://nextjs.org/docs/basic-features/typescript).
-
-* **Step 1**
-Create **tsconfig.json** file and include this [configuration.](https://github.com/vercel/next.js/blob/canary/examples/with-typescript/tsconfig.json "configuration")
-
-	> touch tsconfig.json
-
+**Step four**: Add `tsconfig.json` settings:
 ```json
 {
   "compilerOptions": {
@@ -66,12 +54,28 @@ Create **tsconfig.json** file and include this [configuration.](https://github.c
   "exclude": ["node_modules"]
 }
 ```
+**Step five**: Create `src/pages` folder and add `_app.tsx` and `index.tsx`
 
-*  **Step 2**
-Install dev dependencies.
-	> npm install typescript @types/react @types/node -D
+_app.tsx
 
-**Important:**
-Rename .jsx files to .tsx and use the same package.json script options. NextJS know transpile TypeScript project.
+```javascript
+import type { AppProps } from 'next/app'
 
-Happy hacking!!!
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+```
+
+index.tsx
+
+```javascript
+function HomePage() {
+  return <div>Welcome to Next.js!</div>
+}
+
+export default HomePage
+```
+
+<p align="center">
+    <img alt="Created by Fernando Aguilar" src="https://res.cloudinary.com/dohkdu219/image/upload/v1642443309/portfolio/signature_oq60qf.png" width="80%" />
+</p>
