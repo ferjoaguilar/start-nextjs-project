@@ -2,7 +2,7 @@
     <img alt="Curso de Next.js" src="https://static.platzi.com/media/achievements/badge-nextjs-2259fc68-f86b-486e-bc09-95311a887985.png" width="60" />
  </p>
  <h1 align="center">
-    How to start NextJS project
+    Start NextJS + TypeScript
  </h1>
  <p align="center">
     This guide is created by Fernando Jose Aguilar Rivas
